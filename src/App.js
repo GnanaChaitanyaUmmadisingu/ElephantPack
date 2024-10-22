@@ -2,14 +2,15 @@
 
 import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { Container, CssBaseline, Typography } from '@mui/material';
+import { Container, CssBaseline } from '@mui/material';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import ProductShowcase from './components/ProductShowcase';
 import FeaturesSection from './components/FeaturesSection';
+import About from './components/About';
+import ContactUs from './components/ContactUs'; // Import ContactUs component
 import Footer from './components/Footer';
 
-// Custom Theme
 const theme = createTheme({
   palette: {
     primary: {
@@ -20,6 +21,7 @@ const theme = createTheme({
     },
   },
   typography: {
+    fontFamily: '"Circular Std", sans-serif',
     h1: {
       fontSize: '2.5rem',
       fontWeight: 'bold',
@@ -27,6 +29,12 @@ const theme = createTheme({
     },
     h6: {
       fontWeight: 500,
+    },
+    body1: {
+      fontSize: '1rem',
+    },
+    body2: {
+      fontSize: '0.875rem',
     },
   },
 });
@@ -40,6 +48,8 @@ function App() {
       <Container>
         <ProductShowcase />
         <FeaturesSection />
+        <About />
+        <ContactUs /> 
       </Container>
       <Footer />
     </ThemeProvider>
