@@ -1,5 +1,3 @@
-// src/App.js
-
 import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Container, CssBaseline } from '@mui/material';
@@ -8,7 +6,8 @@ import HeroSection from './components/HeroSection';
 import ProductShowcase from './components/ProductShowcase';
 import FeaturesSection from './components/FeaturesSection';
 import About from './components/About';
-import ContactUs from './components/ContactUs'; // Import ContactUs component
+import ProductsSection from './components/ProductsSection'; 
+import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
 
 const theme = createTheme({
@@ -46,10 +45,11 @@ function App() {
       <Navbar />
       <HeroSection />
       <Container>
-        <ProductShowcase />
+        {/* <ProductShowcase /> */}
+        <ProductsSection /> 
         <FeaturesSection />
         <About />
-        <ContactUs /> 
+        <ContactUs />
       </Container>
       <Footer />
     </ThemeProvider>
