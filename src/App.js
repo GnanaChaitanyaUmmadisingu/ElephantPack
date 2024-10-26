@@ -9,6 +9,7 @@ import About from './components/About';
 import ProductsSection from './components/ProductsSection'; 
 import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
+import { ChatWithUs } from './components/ChatWithUs';
 
 const theme = createTheme({
   palette: {
@@ -50,6 +51,7 @@ function App() {
         <div ref={contactUsRef}>
           <ContactUs />
         </div>
+        <ChatWithUs />
       </Container>
       <Footer />
     </ThemeProvider>

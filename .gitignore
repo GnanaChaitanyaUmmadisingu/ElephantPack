@@ -3,5 +3,6 @@
 /build
 /dist
 .docz
+.env
 
 !/docs/.gitkeep

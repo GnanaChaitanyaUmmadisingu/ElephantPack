@@ -1,0 +1,14 @@
+Hello {{to_name}},
+
+You have received a new message from your website:
+
+Name: {{name}} from {{location}}
+Contact Number: {{contact}}
+
+
+Ask: {{ask}}
+Description:
+{{description}}
+
+Best regards,
+{{from_name}}
