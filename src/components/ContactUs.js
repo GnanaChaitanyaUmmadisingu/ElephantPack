@@ -1,5 +1,3 @@
-// src/components/ContactUs.js
-
 import React from 'react';
 import { Box, Typography, Link, IconButton } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -27,28 +25,49 @@ function ContactUs() {
       </Typography>
 
       <Box sx={{ display: 'flex', justifyContent: 'center', gap: 4, flexWrap: 'wrap' }}>
+        {/* Phone */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <PhoneIcon sx={{ color: '#4caf50', fontSize: 30 }} />
-          <Typography variant="body1">+91 9676811066</Typography>
+          <Link 
+            variant="body1" 
+            sx={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            +91 9676811066
+          </Link>
         </Box>
 
         {/* Email */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <EmailIcon sx={{ color: '#ff9800', fontSize: 30 }} />
-          <Typography variant="body1">elephantpack16@gmail.com</Typography>
+          <Link 
+            href="mailto:elephantpack16@gmail.com" 
+            variant="body1" 
+            sx={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            elephantpack16@gmail.com
+          </Link>
         </Box>
 
         {/* Instagram */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <IconButton
             component={Link}
-            href="https://instagram.com/your-instagram"
+            href="https://www.instagram.com/elephant_pack/?igsh=Z2J2czFzczg5NHV0"
             target="_blank"
+            rel="noopener"
             sx={{ color: '#E4405F' }}
           >
             <InstagramIcon fontSize="large" />
           </IconButton>
-          <Typography variant="body1">Instagram</Typography>
+          <Link 
+            href="https://www.instagram.com/elephant_pack/?igsh=Z2J2czFzczg5NHV0" 
+            variant="body1" 
+            target="_blank" 
+            rel="noopener" 
+            sx={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            Instagram
+          </Link>
         </Box>
 
         {/* IndiaMART */}
@@ -57,11 +76,20 @@ function ContactUs() {
             component={Link}
             href="https://www.indiamart.com/elephantpack/"
             target="_blank"
+            rel="noopener"
             sx={{ color: '#1565c0' }}
           >
             <StorefrontIcon fontSize="large" />
           </IconButton>
-          <Typography variant="body1">IndiaMART</Typography>
+          <Link 
+            href="https://www.indiamart.com/elephantpack/" 
+            variant="body1" 
+            target="_blank" 
+            rel="noopener" 
+            sx={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            IndiaMART
+          </Link>
         </Box>
       </Box>
     </Box>
