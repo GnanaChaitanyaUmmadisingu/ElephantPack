@@ -29,13 +29,13 @@ function ContactUs() {
       <Box sx={{ display: 'flex', justifyContent: 'center', gap: 4, flexWrap: 'wrap' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <PhoneIcon sx={{ color: '#4caf50', fontSize: 30 }} />
-          <Typography variant="body1">+91 12345 67890</Typography>
+          <Typography variant="body1">+91 9676811066</Typography>
         </Box>
 
         {/* Email */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <EmailIcon sx={{ color: '#ff9800', fontSize: 30 }} />
-          <Typography variant="body1">info@elephantpack.com</Typography>
+          <Typography variant="body1">elephantpack16@gmail.com</Typography>
         </Box>
 
         {/* Instagram */}
@@ -55,7 +55,7 @@ function ContactUs() {
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <IconButton
             component={Link}
-            href="https://indiamart.com/your-indiamart"
+            href="https://www.indiamart.com/elephantpack/"
             target="_blank"
             sx={{ color: '#1565c0' }}
           >

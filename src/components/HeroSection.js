@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import backgroundImage from '../Assets/Background-Image.webp';
 
-function HeroSection() {
+function HeroSection({ onExploreClick }) {
   return (
     <Box 
       sx={{
@@ -45,7 +45,7 @@ function HeroSection() {
           opacity: 0,
         }}
       >
-        Luxury Cardboard Boxes
+        Luxury Rigid Boxes
       </Typography>
       <Typography 
         variant="h5" 
@@ -68,10 +68,10 @@ function HeroSection() {
           animation: 'fadeSlideUp 5s ease-in-out forwards', 
           opacity: 0,
         }}
+        onClick={onExploreClick}
       >
         Explore Collection
       </Button>
-
 
       <style>
         {`

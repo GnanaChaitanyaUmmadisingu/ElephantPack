@@ -1,9 +1,9 @@
-import React from 'react';
+// src/App.js
+import React, { useRef } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Container, CssBaseline } from '@mui/material';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
-import ProductShowcase from './components/ProductShowcase';
 import FeaturesSection from './components/FeaturesSection';
 import About from './components/About';
 import ProductsSection from './components/ProductsSection'; 
@@ -12,44 +12,44 @@ import Footer from './components/Footer';
 
 const theme = createTheme({
   palette: {
-    primary: {
-      main: '#4A4A4A',
-    },
-    secondary: {
-      main: '#FFD700',
-    },
+    primary: { main: '#4A4A4A' },
+    secondary: { main: '#FFD700' },
   },
   typography: {
     fontFamily: '"Circular Std", sans-serif',
-    h1: {
-      fontSize: '2.5rem',
-      fontWeight: 'bold',
-      color: '#4A4A4A',
-    },
-    h6: {
-      fontWeight: 500,
-    },
-    body1: {
-      fontSize: '1rem',
-    },
-    body2: {
-      fontSize: '0.875rem',
-    },
+    h1: { fontSize: '2.5rem', fontWeight: 'bold', color: '#4A4A4A' },
+    h6: { fontWeight: 500 },
+    body1: { fontSize: '1rem' },
+    body2: { fontSize: '0.875rem' },
   },
 });
 
 function App() {
+  const productsRef = useRef(null);
+  const contactUsRef = useRef(null);
+
+  const scrollToProducts = () => {
+    productsRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToContactUs = () => {
+    contactUsRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Navbar />
-      <HeroSection />
+      <Navbar onContactClick={scrollToContactUs} />
+      <HeroSection onExploreClick={scrollToProducts} />
       <Container>
-        {/* <ProductShowcase /> */}
-        <ProductsSection /> 
+        <div ref={productsRef}>
+          <ProductsSection /> 
+        </div>
         <FeaturesSection />
         <About />
-        <ContactUs />
+        <div ref={contactUsRef}>
+          <ContactUs />
+        </div>
       </Container>
       <Footer />
     </ThemeProvider>

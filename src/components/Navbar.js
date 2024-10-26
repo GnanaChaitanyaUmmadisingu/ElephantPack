@@ -1,12 +1,10 @@
 // src/components/Navbar.js
-
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import logo from '../Assets/ElephantPack-Logo.webp';
-// Import Material UI icon for contact
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
-function Navbar() {
+function Navbar({ onContactClick }) {
   return (
     <AppBar position="static" sx={{ bgcolor: 'white', color: 'black' }}>
       <Toolbar>
@@ -24,7 +22,8 @@ function Navbar() {
         <Button 
           color="secondary" 
           variant="contained" 
-          startIcon={<LocalPhoneIcon />} // Add icon here
+          startIcon={<LocalPhoneIcon />} 
+          onClick={onContactClick} // Bind the click event to scroll to Contact Us
         >
           Contact Us
         </Button>
