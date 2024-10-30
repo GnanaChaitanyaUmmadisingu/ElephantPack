@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import logo from '../Assets/ElephantPack-Logo.webp';
-import { Info, Business, DesignServices, Gavel } from '@mui/icons-material';
+import { Business, DesignServices, Gavel } from '@mui/icons-material';
 
 function About() {
   return (
