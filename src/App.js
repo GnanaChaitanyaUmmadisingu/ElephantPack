@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useRef } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Container, CssBaseline } from '@mui/material';
@@ -10,6 +9,7 @@ import ProductsSection from './components/ProductsSection';
 import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
 import { ChatWithUs } from './components/ChatWithUs';
+import AnimatedBanner from './components/AnimatedBanner';
 
 const theme = createTheme({
   palette: {
@@ -42,7 +42,8 @@ function App() {
       <CssBaseline />
       <Navbar onContactClick={scrollToContactUs} />
       <HeroSection onExploreClick={scrollToProducts} />
-      <Container>
+      <Container sx={{pt: 10}}>
+       <AnimatedBanner />
         <div ref={productsRef}>
           <ProductsSection /> 
         </div>

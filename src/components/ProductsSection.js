@@ -1,5 +1,6 @@
-import React from 'react';
-import { Box, Typography, Card, CardContent, CardMedia, Grid } from '@mui/material';
+import React, { useState } from 'react';
+import ContactDialog from './ContactDialog';
+import { Box, Typography, Card, CardContent, CardMedia, Grid, Button } from '@mui/material';
 
 const products = [
   {
@@ -10,7 +11,7 @@ const products = [
   {
     name: 'Liquor Box',
     description: 'Durable and stylish liquor boxes for premium packaging.',
-    image:require('../Assets/LiquorBox.webp'),
+    image: require('../Assets/LiquorBox.webp'),
   },
   {
     name: 'Sweet Box',
@@ -40,6 +41,11 @@ const products = [
 ];
 
 function ProductsSection() {
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const handleDialogOpen = () => setOpenDialog(true);
+  const handleDialogClose = () => setOpenDialog(false);
+
   return (
     <Box 
       sx={{ 
@@ -52,9 +58,9 @@ function ProductsSection() {
       <Typography variant="h4" sx={{ mb: 4, fontWeight: 'bold' }}>
         Our Products
       </Typography>
-      <Grid container spacing={4} justifyContent="center" sx={{pl: 2}}>
+      <Grid container spacing={4} justifyContent="center" sx={{ pl: 2 }}>
         {products.map((product, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index} >
+          <Grid item xs={12} sm={6} md={4} key={index}>
             <Card 
               sx={{ 
                 maxWidth: 345, 
@@ -73,17 +79,27 @@ function ProductsSection() {
                 alt={product.name}
               />
               <CardContent>
-                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
                   {product.name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
                   {product.description}
                 </Typography>
+                <Button 
+                  variant="contained" 
+                  color="primary" 
+                  sx={{ mt: 2, textTransform: 'none' }}
+                  onClick={handleDialogOpen}
+                >
+                  Contact for Pricing
+                </Button>
               </CardContent>
             </Card>
           </Grid>
         ))}
       </Grid>
+      
+      <ContactDialog open={openDialog} handleClose={handleDialogClose} />
     </Box>
   );
 }

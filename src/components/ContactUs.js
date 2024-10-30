@@ -92,6 +92,11 @@ function ContactUs() {
           </Link>
         </Box>
       </Box>
+
+      {/* Address */}
+      <Typography variant="body2" sx={{ mt: 4, color: 'text.secondary' }}>
+        Tekkellepadu, Guntur, Andhra Pradesh, INDIA, 522509
+      </Typography>
     </Box>
   );
 }

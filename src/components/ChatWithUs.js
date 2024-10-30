@@ -20,7 +20,14 @@ export function ChatWithUs() {
   }, []);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    // Restrict contact number to numeric input only
+    if (name === 'contact' && !/^[0-9]*$/.test(value)) {
+      return;
+    }
+
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
@@ -91,6 +98,8 @@ export function ChatWithUs() {
         <TextField 
           label="Contact Number" 
           name="contact" 
+          type="tel" 
+          inputProps={{ maxLength: 15 }}
           variant="outlined" 
           fullWidth 
           sx={{ mb: 2 }} 

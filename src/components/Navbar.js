@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import logo from '../Assets/ElephantPack-Logo.webp';
@@ -23,7 +22,7 @@ function Navbar({ onContactClick }) {
           color="secondary" 
           variant="contained" 
           startIcon={<LocalPhoneIcon />} 
-          onClick={onContactClick} // Bind the click event to scroll to Contact Us
+          onClick={onContactClick} 
         >
           Contact Us
         </Button>
